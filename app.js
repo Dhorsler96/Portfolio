@@ -2,6 +2,7 @@ function getPics() {} //just for this demo
 const imgs = document.querySelectorAll(".gallery img");
 const fullPage = document.querySelector("#fullpage");
 
+
 imgs.forEach((img) => {
   img.addEventListener("click", function () {
     fullPage.style.backgroundImage = "url(" + img.src + ")";
@@ -21,17 +22,11 @@ images.forEach(function (image) {
     // Get the fullpage div
     var fullpage = document.querySelector("#fullpage");
 
-    // Create a new p tag
-    var newPTag = document.createElement("p");
-
-    // Add the class to the new p tag
-    newPTag.classList.add("fullscreen-big-text");
+    //Get the fullpage div text
+    var fullpageText = document.querySelector("#fullpage-text");
 
     // Set the text of the new p tag
-    newPTag.textContent = text;
-
-    // Append the new p tag to the fullpage div
-    fullpage.appendChild(newPTag);
+    fullpageText.textContent = text;
 
     // Display the fullpage div
     fullpage.style.display = "block";
@@ -46,3 +41,4 @@ fullpage.addEventListener("click", function () {
   // Enable scrolling on the body
   document.body.style.overflow = "auto";
 });
+

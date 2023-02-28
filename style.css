@@ -142,7 +142,7 @@ section {
   font-family: "Times Now";
 }
 
-.fullscreen-big-text {
+#fullpage-text {
   font-size: 3vw;
   position: fixed;
   bottom: 1rem;
