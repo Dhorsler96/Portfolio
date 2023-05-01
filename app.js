@@ -1,7 +1,8 @@
+import { SplitText } from "./assets/splitText.js";
+
 function getPics() {} //just for this demo
 const imgs = document.querySelectorAll(".gallery img");
 const fullPage = document.querySelector("#fullpage");
-
 
 imgs.forEach((img) => {
   img.addEventListener("click", function () {
@@ -22,11 +23,17 @@ images.forEach(function (image) {
     // Get the fullpage div
     var fullpage = document.querySelector("#fullpage");
 
-    //Get the fullpage div text
-    var fullpageText = document.querySelector("#fullpage-text");
+    // Create a new p tag
+    var newPTag = document.createElement("p");
+
+    // Add the class to the new p tag
+    newPTag.classList.add("fullscreen-big-text");
 
     // Set the text of the new p tag
-    fullpageText.textContent = text;
+    newPTag.textContent = text;
+
+    // Append the new p tag to the fullpage div
+    fullpage.appendChild(newPTag);
 
     // Display the fullpage div
     fullpage.style.display = "block";
@@ -42,3 +49,24 @@ fullpage.addEventListener("click", function () {
   document.body.style.overflow = "auto";
 });
 
+// Animations
+
+gsap.registerPlugin(ScrollTrigger);
+
+//Preloader
+window.addEventListener("load", (event) => {
+  console.log(event);
+  const tl = gsap.timeline();
+  tl.to(".preloader", { scaleY: 0, duration: 0.6, ease: Power2.easeInOut, transformOrigin: "top center" });
+  tl.from(".hero-text-word", { y: "101%", duration: 0.5, ease: Power2.easeOut, stagger: 0.05 });
+  tl;
+  // tl.from(".work-item-wrapper", { duration: 0.7, yPercent: 70, stagger: 0.02 });
+});
+
+//Work Images Load in
+ScrollTrigger.batch(".work-item-wrapper", {
+  once: true,
+  onEnter: (batch) => {
+    gsap.from(batch, { duration: 0.7, yPercent: 70, stagger: 0.02 });
+  },
+});
