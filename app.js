@@ -53,15 +53,15 @@ fullpage.addEventListener("click", function () {
 
 gsap.registerPlugin(ScrollTrigger);
 
-//Preloader
-window.addEventListener("load", (event) => {
-  console.log(event);
-  const tl = gsap.timeline();
-  tl.to(".preloader", { scaleY: 0, duration: 0.6, ease: Power2.easeInOut, transformOrigin: "top center" });
-  tl.from(".hero-text-word", { y: "101%", duration: 0.5, ease: Power2.easeOut, stagger: 0.05 });
-  tl;
-  // tl.from(".work-item-wrapper", { duration: 0.7, yPercent: 70, stagger: 0.02 });
-});
+// //Preloader
+// window.addEventListener("load", (event) => {
+//   console.log(event);
+//   const tl = gsap.timeline();
+//   tl.to(".preloader", { scaleY: 0, duration: 0.6, ease: Power2.easeInOut, transformOrigin: "top center" });
+//   tl.from(".hero-text-word", { y: "101%", duration: 0.5, ease: Power2.easeOut, stagger: 0.05 });
+//   tl;
+//   // tl.from(".work-item-wrapper", { duration: 0.7, yPercent: 70, stagger: 0.02 });
+// });
 
 //Work Images Load in
 ScrollTrigger.batch(".work-item-wrapper", {
