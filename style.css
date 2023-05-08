@@ -29,6 +29,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .main {
   display: none;
   position: absolute;
@@ -84,6 +88,7 @@ a {
   font-size: clamp(1rem, 2.2vw, 1.2rem);
   letter-spacing: -0.04vw;
   overflow: hidden;
+  color: var(--blue);
 }
 
 .preloader {
@@ -242,20 +247,9 @@ a {
   display: flex;
   justify-content: start;
   align-items: end;
-  padding: 2rem;
+  padding: 4rem 2rem;
   background-color: white;
   display: none;
-}
-
-.close-btn {
-  font-family: "Helvetica Now";
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-  letter-spacing: -0.04vw;
-  font-weight: 300;
-  color: var(--blue);
-  position: absolute;
-  top: 0.7rem;
-  right: 0.7rem;
 }
 
 .info-link {
@@ -264,14 +258,30 @@ a {
 
 .info-link a {
   font-size: 5rem;
+  font-family: "Helvetica Now";
   color: var(--black);
   text-decoration: none;
+  font-weight: 400;
+  letter-spacing: -0.2rem;
+  position: relative;
+  z-index: 100000;
 }
 
 .info-link a:hover {
+  color: #0249ff;
+}
+
+.nav.info-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.info-heading {
   font-family: "Helvetica Now";
-  line-height: 6rem;
-  color: var(--blue);
+  font-weight: 300;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  letter-spacing: -0.04vw;
 }
 
 @media only screen and (max-width: 1200px) {
