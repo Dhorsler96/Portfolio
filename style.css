@@ -29,6 +29,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.main {
+  display: none;
+}
+
 #fullpage {
   display: none;
   position: fixed;
@@ -45,9 +49,6 @@ body {
 
 h1 {
   font-family: "Times Now";
-  font-size: 7vw;
-  letter-spacing: -0.45vw;
-  line-height: 6.2vw;
   font-weight: 300;
 }
 
@@ -60,7 +61,6 @@ h2 {
 a {
   text-decoration: none;
   display: inline;
-  letter-spacing: -0.15vw;
   color: var(--blue);
 }
 
@@ -82,6 +82,7 @@ a {
   font-family: "Helvetica Now";
   font-size: clamp(1rem, 2.2vw, 1.2rem);
   letter-spacing: -0.04vw;
+  overflow: hidden;
 }
 
 .preloader {
@@ -104,6 +105,8 @@ a {
   margin-top: 5rem;
   padding: 0.5rem;
   font-size: clamp(2.3rem, 6vw, 10rem);
+  letter-spacing: clamp(-0.4rem, -0.4vw, -1rem);
+  /* letter-spacing: -0.4vw; */
   line-height: 0px;
 }
 
@@ -127,6 +130,10 @@ a {
   display: inline-block;
   margin-right: -0.8rem;
   line-height: 6vw;
+}
+
+.hero-text-word-mask .padding {
+  margin-top: -1rem;
 }
 
 .hero-wrapper {
@@ -153,6 +160,10 @@ a {
   letter-spacing: -0.03rem;
   font-weight: 300;
   font-size: 1rem;
+}
+
+.hero-bottom-nav-text {
+  overflow: hidden;
 }
 
 /* Home - Work */
@@ -216,6 +227,39 @@ a {
   padding: 0rem 0.2rem;
   margin-bottom: -1rem;
 }
+
+/* info */
+
+.info-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  padding: 2rem;
+  background-color: white;
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+info-links-wrapper {
+  bottom: 0;
+}
+
+info {
+}
+font-family: "Times Now";
+font-weight: 300;
+
 /* 
 @media only screen and (min-width: 1900px) {
   .hero-text {

@@ -53,15 +53,16 @@ fullpage.addEventListener("click", function () {
 
 gsap.registerPlugin(ScrollTrigger);
 
-// //Preloader
-// window.addEventListener("load", (event) => {
-//   console.log(event);
-//   const tl = gsap.timeline();
-//   tl.to(".preloader", { scaleY: 0, duration: 0.6, ease: Power2.easeInOut, transformOrigin: "top center" });
-//   tl.from(".hero-text-word", { y: "101%", duration: 0.5, ease: Power2.easeOut, stagger: 0.05 });
-//   tl;
-//   // tl.from(".work-item-wrapper", { duration: 0.7, yPercent: 70, stagger: 0.02 });
-// });
+window.addEventListener("load", (event) => {
+  console.log(event);
+  let main = document.querySelector(".main");
+  main.style.display = "block";
+  const tl = gsap.timeline();
+  tl.to(".preloader", { scaleY: 0, duration: 0.6, ease: Power2.easeInOut, transformOrigin: "top center" }, 0);
+  tl.from(".hero-text-word", { y: "101%", duration: 0.5, ease: Power2.easeOut, stagger: 0.05 }, "details");
+  tl.from(".nav-text", { y: "101%", duration: 0.5, ease: Power2.easeOut, stagger: 0.05 }, "details");
+  tl.from(".hero-bottom-nav-text h2", { y: "101%", duration: 0.5, ease: Power2.easeOut, stagger: 0.05 }, "details");
+});
 
 //Work Images Load in
 ScrollTrigger.batch(".work-item-wrapper", {
@@ -69,4 +70,13 @@ ScrollTrigger.batch(".work-item-wrapper", {
   onEnter: (batch) => {
     gsap.from(batch, { duration: 0.7, yPercent: 70, stagger: 0.02 });
   },
+});
+
+// Info
+
+const info = document.querySelector("#info");
+console.log(info);
+
+info.addEventListener("click", (event) => {
+  console.log("hello");
 });
