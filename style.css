@@ -387,6 +387,13 @@ a {
   .hero-text {
     padding: 0rem;
   }
+
+  .info-link a {
+    font-size: 3.8rem;
+  }
+  .info-link {
+    height: 3.5rem;
+  }
 }
 
 .hide {
