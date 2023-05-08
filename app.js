@@ -74,9 +74,24 @@ ScrollTrigger.batch(".work-item-wrapper", {
 
 // Info
 
-const info = document.querySelector("#info");
+const infoButton = document.querySelector("#info");
+const info = document.querySelector(".info-wrapper");
+const close = document.querySelector(".close-btn");
+
 console.log(info);
 
-info.addEventListener("click", (event) => {
+infoButton.addEventListener("click", (event) => {
   console.log("hello");
+  info.classList.toggle("hide");
+});
+
+close.addEventListener("click", (event) => {
+  console.log("goodbye");
+  info.classList.toggle("hide");
+});
+
+const infoLink = document.querySelector("info-link");
+
+infoLink.addEventListener("momouseover", (event) => {
+  console.log("hover");
 });

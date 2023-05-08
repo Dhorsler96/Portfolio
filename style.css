@@ -31,6 +31,7 @@ body {
 
 .main {
   display: none;
+  position: absolute;
 }
 
 #fullpage {
@@ -95,6 +96,10 @@ a {
   transform-origin: -100% 50%;
 }
 
+.nav-mask {
+  overflow: hidden;
+}
+
 /* Homepage - Hero */
 
 .container {
@@ -102,44 +107,41 @@ a {
 }
 
 .hero-text {
-  margin-top: 5rem;
   padding: 0.5rem;
-  font-size: clamp(2.3rem, 6vw, 10rem);
-  letter-spacing: clamp(-0.4rem, -0.4vw, -1rem);
-  /* letter-spacing: -0.4vw; */
-  line-height: 0px;
 }
 
 .hero-text-word {
   display: inline-block;
+  font-size: 6rem;
+  line-height: 8rem;
+  letter-spacing: -0.4rem;
 }
 
 .hero-text-link {
   font-family: "Helvetica Now";
-  font-size: clamp(2rem, 5vw, 8rem);
-  line-height: clamp(2rem, 5vw, 10rem);
   text-decoration-color: var(--blue);
   display: inline-block;
   padding-bottom: 0.5rem;
-  margin-top: -2rem;
+  letter-spacing: -0.2rem;
 }
 
 .hero-text-word-mask {
   overflow: hidden;
   padding: 0.1rem 0.6rem;
   display: inline-block;
-  margin-right: -0.8rem;
-  line-height: 6vw;
+  margin-right: -0.2rem;
 }
 
-.hero-text-word-mask .padding {
-  margin-top: -1rem;
+.hero-text-word-mask.link {
+  margin-top: -3rem;
+  /* background-color: rgba(100, 0, 0, 1); */
 }
 
 .hero-wrapper {
-  padding: 5vw 0 0 0;
   height: 70vh;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .hero-text-word-mask .hero-text-link:hover {
@@ -246,28 +248,31 @@ a {
 }
 
 .close-btn {
+  font-family: "Helvetica Now";
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  letter-spacing: -0.04vw;
+  font-weight: 300;
+  color: var(--blue);
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 0.7rem;
+  right: 0.7rem;
 }
 
-info-links-wrapper {
-  bottom: 0;
+.info-link {
+  height: 5rem;
 }
 
-info {
+.info-link a {
+  font-size: 5rem;
+  color: var(--black);
+  text-decoration: none;
 }
-font-family: "Times Now";
-font-weight: 300;
 
-/* 
-@media only screen and (min-width: 1900px) {
-  .hero-text {
-    font-size: 128px;
-    line-height: 100px;
-    letter-spacing: -3px;
-  }
-} */
+.info-link a:hover {
+  font-family: "Helvetica Now";
+  line-height: 6rem;
+  color: var(--blue);
+}
 
 @media only screen and (max-width: 1200px) {
   .gallery {
@@ -275,6 +280,27 @@ font-weight: 300;
   }
   #fullpage {
     background-size: 40vw;
+  }
+  .hero-text a {
+    letter-spacing: -0.2vw;
+  }
+
+  .hero-text-word {
+    font-size: 4rem;
+    line-height: 6rem;
+    letter-spacing: -0.3rem;
+  }
+
+  .hero-text-link {
+    font-size: 3.8rem;
+    line-height: 5.4rem;
+  }
+  .hero-text-word-mask {
+    margin-right: -0.7rem;
+  }
+
+  .hero-text-word-mask.link {
+    margin-top: -2rem;
   }
 }
 
@@ -294,6 +320,25 @@ font-weight: 300;
   #fullpage {
     background-size: 60vw;
   }
+
+  .hero-text-word {
+    font-size: 3.5rem;
+    line-height: 5.4rem;
+    letter-spacing: -0.2rem;
+  }
+
+  .hero-text-link {
+    font-size: 3.2rem;
+    line-height: 5rem;
+    letter-spacing: -01rem;
+  }
+  .hero-text-word-mask {
+    margin-right: -0.7rem;
+  }
+
+  .hero-text-word-mask.link {
+    margin-top: -2rem;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -304,7 +349,36 @@ font-weight: 300;
     background-size: calc(100vw - 2rem);
   }
 
-  .hero-text {
-    max-width: 75vw;
+  .hero-text-word {
+    /* font-size: 2.5rem;
+    line-height: 3rem;
+    letter-spacing: -0.17rem; */
+    font-size: 10vw;
+    line-height: 12vw;
+    letter-spacing: -0.8vw;
   }
+
+  .hero-text-link {
+    /* font-size: 2.3rem;
+    line-height: 2.9rem;
+    letter-spacing: -0.15rem; */
+    font-size: 9vw;
+    line-height: 12vw;
+  }
+
+  .hero-text-word-mask {
+    padding: 0.1rem 0.4rem;
+  }
+
+  .hero-text-word-mask.link {
+    margin-top: -1.2rem;
+  }
+
+  .hero-text {
+    padding: 0rem;
+  }
+}
+
+.hide {
+  display: flex;
 }
