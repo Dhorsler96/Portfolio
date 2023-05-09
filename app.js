@@ -39,14 +39,16 @@ images.forEach(function (image) {
     fullpage.style.display = "block";
 
     // Disable scrolling on the body
-    document.body.style.overflow = "hidden";
+    document.body.classList.toggle("no-scroll");
+    document.html.classList.toggle("no-scroll");
   });
 });
 
 // Add a click event listener to the fullpage div
 fullpage.addEventListener("click", function () {
   // Enable scrolling on the body
-  document.body.style.overflow = "auto";
+  document.body.classList.toggle("no-scroll");
+  document.html.classList.toggle("no-scroll");
 });
 
 // Animations
@@ -84,12 +86,14 @@ infoButton.addEventListener("click", (event) => {
   console.log("hello");
   info.classList.toggle("hide");
   document.body.classList.toggle("no-scroll");
+  document.html.classList.toggle("no-scroll");
 });
 
 close.addEventListener("click", (event) => {
   console.log("goodbye");
   info.classList.toggle("hide");
   document.body.classList.toggle("no-scroll");
+  document.html.classList.toggle("no-scroll");
 });
 
 const infoLink = document.querySelector(".info-link");
@@ -97,7 +101,3 @@ const infoLink = document.querySelector(".info-link");
 infoLink.addEventListener("mouseover", (event) => {
   console.log("hover");
 });
-
-// window.addEventListener("mouseover", (event) => {
-//   console.log(event);
-// });

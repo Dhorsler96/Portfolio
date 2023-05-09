@@ -31,6 +31,8 @@ body {
 
 .no-scroll {
   overflow: hidden;
+  position: relative;
+  height: 100%;
 }
 
 .main {
@@ -284,10 +286,28 @@ a {
   letter-spacing: -0.04vw;
 }
 
+/* .work-item-wrapper img {
+  max-height: 80vh;
+  width: auto;
+  max-width: calc(100vw - 2rem);
+}
+
+.work-item-wrapper.full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 10000;
+  height: 100vh;
+  width: 100vw;
+  padding: 1rem;
+} */
+
 @media only screen and (max-width: 1200px) {
   .gallery {
     grid-template-columns: auto auto auto auto auto auto;
   }
+
   #fullpage {
     background-size: 40vw;
   }
@@ -393,6 +413,9 @@ a {
   }
   .info-link {
     height: 3.5rem;
+  }
+  .work-text-large {
+    font-size: 2rem;
   }
 }
 
