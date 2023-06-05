@@ -27,6 +27,7 @@ body {
   text-rendering: geometricPrecision;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  background-color: white;
 }
 
 .no-scroll {
@@ -241,7 +242,7 @@ a {
 
 .info-wrapper {
   width: 100vw;
-  height: 100vh;
+  height: 100svh;
   position: fixed;
   z-index: 1000;
   top: 0;
