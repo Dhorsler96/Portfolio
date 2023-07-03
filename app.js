@@ -24,10 +24,7 @@ images.forEach(function (image) {
     var fullpage = document.querySelector("#fullpage");
 
     // Create a new p tag
-    var newPTag = document.createElement("p");
-
-    // Add the class to the new p tag
-    newPTag.classList.add("fullscreen-big-text");
+    var newPTag = document.querySelector(".fullscreen-big-text");
 
     // Set the text of the new p tag
     newPTag.textContent = text;
@@ -48,7 +45,6 @@ images.forEach(function (image) {
 fullpage.addEventListener("click", function () {
   // Enable scrolling on the body
   document.body.classList.toggle("no-scroll");
-  document.html.classList.toggle("no-scroll");
 });
 
 // Animations
