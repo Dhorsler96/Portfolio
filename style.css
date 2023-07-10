@@ -421,6 +421,9 @@ a {
   .fullscreen-big-text {
     font-size: 1.5rem;
   }
+  .info-wrapper {
+    padding: 3rem 1rem;
+  }
 }
 
 .hide {
